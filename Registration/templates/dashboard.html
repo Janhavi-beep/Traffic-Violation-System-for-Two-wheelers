@@ -1,0 +1,110 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>Traffic Violation Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: url("{% static 'images/dashimage.jpg' %}") no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        height: 100vh;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .dashboard-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 40px 60px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px)
+      }
+
+      .dashboard-box h2 {
+        margin-bottom: 30px;
+        font-weight: bold;
+        font-size: 28px;
+        color: #f8f9fa;
+      }
+
+      .button-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .dashboard-box a button {
+        width: 150px;
+        height: 50px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-video {
+        background-color: #17a2b8;
+        color: white;
+      }
+
+      .btn-video:hover {
+        background-color: #138496;
+      }
+
+      .btn-image {
+        background-color: #28a745;
+        color: white;
+      }
+
+      .btn-image:hover {
+        background-color: #218838;
+      }
+
+      .btn-exit {
+        background-color: #dc3545;
+        color: white;
+      }
+
+      .btn-exit:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="dashboard-box">
+        <h2>Welcome to Traffic Violation System</h2>
+        <div class="button-group text-center mt-4">
+          <a href="{% url 'video_analysis' %}" class="btn btn-primary mx-2">🎥 Video</a>
+          <a href="{% url 'image_analysis' %}" class="btn btn-success mx-2">📷 Image</a>
+          <a href="{% url 'home' %}" class="btn btn-primary mx-2" style="background-color: #dc3545; border-color: #dc3545;">📕 Exit</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
