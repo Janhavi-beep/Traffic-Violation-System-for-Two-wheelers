@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Violation Detection System</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("{% static 'images/trafficimage.jpg' %}"); /* <-- Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: brightness(0.6);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    .btn-custom {
+      background-color: #343a40;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      margin: 10px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-custom:hover {
+      background-color: #495057;
+    }
+
+    .btn-logout {
+      background-color: #dc3545;
+    }
+
+    .btn-logout:hover {
+      background-color: #c82333;
+    }
+  </style>
+   <!-- Link CSS -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+   <!-- Link JS -->
+   <script src="{% static 'js/script.js' %}"></script>
+
+</head>
+<body>
+  <h1>Traffic Violation Detection System</h1>
+  <p>Monitor helmet usage, triple-seating, and number plate detection for two-wheelers</p>
+
+  <a href="{% url 'dashboard' %}" class="btn-custom">Go to Dashboard</a>
+  <a href="{% url 'logout' %}" class="btn-custom btn-logout">Logout</a>
+</body>
+</html>
